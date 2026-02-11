@@ -1,0 +1,90 @@
+/* Body styling - centers the form on the page */
+body {
+  background-color: #27262C;
+  background-image: url('shapes/shapes.png');
+  background-size: cover; /* or 'contain' depending on your image */
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Form container - controls the width and spacing */
+.login {
+  width: 531px;
+  padding: 40px; /* CHANGED: Reduced from 289px padding-top to 40px all around - the huge padding was pushing everything way down */
+  /* REMOVED: height: 482px - let the content determine the height naturally */
+}
+
+/* Hide labels visually but keep them for screen readers */
+/* ADDED: This entire rule - hides labels so they don't show on screen (matching the design) but keeps them in the HTML for accessibility */
+label {
+  position: absolute;
+  left: -9999px; /* Moves them far off-screen */
+}
+
+/* Login heading styling */
+h1 {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  text-align: center; /* CHANGED: Using text-align instead of flexbox - simpler for centering text */
+  font-style: italic; /* ADDED: The design shows italic "LOGIN" */
+  font-weight: 900;
+  font-size: 96px; /* ADDED: Makes the heading larger to match design */
+  margin-bottom: 60px; /* ADDED: Adds space between heading and first input */
+  /* REMOVED: justify-content, align-items, display: flex - not needed for text centering */
+  letter-spacing: 0%;
+  line-height: 100%;
+}
+
+/* Input fields styling - username and password */
+/* ADDED: This entire rule - styles the input fields to match the design */
+input {
+  font-family: 'Roboto', sans-serif;
+  background: transparent; /* No background color - see-through */
+  border: none; /* Removes default border on all sides */
+  border-bottom: 1px solid #6B6B6B; /* Adds only bottom border (the underline effect in design) */
+  color: #fff; /* Text color white when typing */
+  width: 100%; /* Full width of the form container */
+  padding: 10px 0; /* Vertical padding only (top and bottom) */
+  margin-bottom: 40px; /* Space between inputs */
+  font-size: 18px; /* Readable text size */
+  outline: none; /* Removes blue outline when clicked */
+  line-height: 100%;
+}
+
+/* Placeholder text styling (the "Username" and "Password" hints) */
+/* ADDED: This entire rule - makes placeholder text gray instead of default */
+input::placeholder {
+  font-family: 'Roboto', sans-serif;
+  color: #999;
+  font-size: 16px;
+}
+
+
+/* Login button styling */
+.login_bttn {
+
+  background-color: #4044ED; /* Blue color - no change */
+  border: none; /* No border - no change */
+  width: 100%; /* CHANGED: From 531px to 100% - makes it responsive and matches input width */
+  height: 48px; /* No change */
+  margin-top: 30px; /* CHANGED: From margin: 50px to margin-top: 30px - only adds space above button, not all sides */
+  color: white; /* ADDED: Makes button text white */
+  font-size: 16px; /* ADDED: Makes button text readable */
+  cursor: pointer; /* ADDED: Shows hand cursor on hover */
+  border-radius: 4px; /* ADDED: Slightly rounds the corners to match design */
+  text-transform: lowercase; /* ADDED: Makes "login" lowercase to match design */
+  /* REMOVED: padding-top and padding-bottom - height already controls button size */
+}
+
+/* Optional: Button hover effect */
+/* ADDED: This entire rule - makes button interactive when you hover over it */
+.login_bttn:hover {
+  background-color: #5054ff; /* Slightly lighter blue on hover */
+}
+
